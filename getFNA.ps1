@@ -1,7 +1,7 @@
 #!/bin/bash
 # Program: getFNA
 # Author: Caleb Cornett (converted to powershell to work with windows)
-# Usage: ./getFNA.sh
+# Usage: ./getFNA.ps1
 # Description: Quick and easy way to install a local copy of FNA and its native libraries.
 
 # Checks if dotnet is installed
@@ -165,7 +165,7 @@ Rename-Item -Path "project_name/project_name.csproj.user"   -NewName "${newProje
 Rename-Item -Path "project_name"                            -NewName $newProjectName
 
 git init
-git submodule add https://github.com/prime31/Nez.git
+git submodule add https://github.com/foxnne/Nez.git
 Set-Location Nez
 git submodule init
 git submodule update

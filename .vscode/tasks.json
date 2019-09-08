@@ -1,6 +1,7 @@
 {
     "version": "2.0.0",
     "tasks": [
+
         {
             "label": "Restore Project",
             "type": "shell",
@@ -8,7 +9,7 @@
             "group": "build",
             "problemMatcher": "$msCompile"
         },
-		
+	
         {
             // this does a bunch of stuff:
             // - update submodules to lastest (fetch latest Nez version)
@@ -30,7 +31,7 @@
         },
 
         {
-            "label": "Clean Project",
+            "label": "Clean Builds",
             "type": "shell",
             "command": "msbuild project_name /t:clean /p:configuration=Debug && msbuild project_name /t:clean /p:configuration=Release",
             "group": "build",
@@ -132,7 +133,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        {
+        /* {
             "label": "Force Build Content",
             "type": "shell",
             "group": "build",
@@ -150,9 +151,9 @@
                 "cwd": "${workspaceFolder}/project_name/CompiledContent"
             },
             "problemMatcher": "$msCompile"
-        },
+        }, */
 
-        {
+        /* {
             "label": "Open Pipeline Tool",
             "type": "shell",
             "group": "build",
@@ -163,10 +164,10 @@
                 "command": "${workspaceFolder}/project_name/CompiledContent/Content.mgcb"
             },
             "problemMatcher": "$msCompile"
-        },
+        }, */
 		
         {
-            "label": "Process T4 Templates",
+            "label": "Generate Content Paths",
             "type": "shell",
             "osx": {
                 "command": "${workspaceFolder}/.vscode/processT4Templates.sh"
