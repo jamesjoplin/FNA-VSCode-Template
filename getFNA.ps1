@@ -164,11 +164,15 @@ Rename-Item -Path "project_name/project_name.csproj"        -NewName "${newProje
 Rename-Item -Path "project_name/project_name.csproj.user"   -NewName "${newProjectName}.csproj.user"
 Rename-Item -Path "project_name"                            -NewName $newProjectName
 
+#create a git repo locally and add our fork of Nez
 git init
-git submodule add https://github.com/foxnne/Nez.git
+git submodule add git://github.com/foxnne/Nez.git
 Set-Location Nez
 git submodule init
 git submodule update
+
+#set upstream for us to update from prime31's Nez
+git remote add upstream git://github.com/prime31/Nez.git
 
 "Restoring..."
 Set-Location $PSScriptRoot

@@ -106,6 +106,42 @@
         },
 
         {
+            "label": "Run (Release)",
+            "type": "shell",
+            "group": "build",
+            "osx":{
+                "command": "DYLD_LIBRARY_PATH=${workspaceFolder}/project_name/bin/Release/osx/ mono ${workspaceFolder}/project_name/bin/Release/project_name.exe"
+            },
+            "windows":{
+                "command": "start",
+                "args": [
+                    "/wait",
+                    "${workspaceFolder}/project_name/bin/Release/project_name.exe",
+                    "${workspaceFolder}/project_name/bin/Release/project_name.exe"
+                ]
+            },
+            "problemMatcher": "$msCompile"
+        },
+
+        {
+            "label": "Run (Debug)",
+            "type": "shell",
+            "group": "build",
+            "osx":{
+                "command": "DYLD_LIBRARY_PATH=${workspaceFolder}/project_name/bin/Debug/osx/ mono ${workspaceFolder}/project_name/bin/Debug/project_name.exe"
+            },
+            "windows":{
+                "command": "start",
+                "args": [
+                    "/wait",
+                    "${workspaceFolder}/project_name/bin/Debug/project_name.exe",
+                    "${workspaceFolder}/project_name/bin/Debug/project_name.exe"
+                ]
+            },
+            "problemMatcher": "$msCompile"
+        },
+
+        {
             "label": "Build Effects",
             "type": "shell",
             "group": "build",
